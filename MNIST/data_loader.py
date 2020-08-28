@@ -21,13 +21,13 @@ def getMNIST(batch_size, test_batch_size, img_size, **kwargs):
     ds = []
     train_loader = DataLoader(
         datasets.MNIST(root='../data/mnist', train=True, download=True, transform=transform_train), batch_size=batch_size,
-        shuffle=True, num_workers=num_workers, drop_last=True
+        shuffle=True, drop_last=True
     )
     ds.append(train_loader)
 
     test_loader = DataLoader(
         datasets.MNIST(root='../data/mnist', train=False, download=True, transform=transform_test),
-        batch_size=test_batch_size, shuffle=False, num_workers=num_workers, drop_last=True
+        batch_size=test_batch_size, shuffle=False,drop_last=True
     )
     ds.append(test_loader)
 
